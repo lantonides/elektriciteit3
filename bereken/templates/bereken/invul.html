@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+<head>
+        <title>Invul formulier</title>
+         <link rel="stylesheet" type="text/css" href="{% static 'css/invul.css' %}"
+</head>
+
+<body>
+<h1> Vul uw gegevens in om uw huidige kosten te berekenen</h1>
+<form action='' method='post'>
+        {% csrf_token %}
+<table>
+        {{form.as_table}}
+</table>
+        <input type="submit" value='Bereken'/>
+</form>
+</body>
+
+
+</html>
+
