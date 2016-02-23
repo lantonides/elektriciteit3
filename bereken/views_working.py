@@ -22,6 +22,7 @@ def bereken(request):
 			totaal_elektriciteitskosten=float(kw_verbruik)*float(huidig_pijs_kw)+capaciteitstarief_elektriciteit_25A-heffingskorting
                         totaal_gaskosten=float(gasverbruik)*float(huidig_prijs_m3)+capaciteitstarief_gas
 			
+			totaal_kosten(kw_verbruik,gasverbruik,huidig_pijs_kw,huidig_prijs_m3,capaciteitstarief_gas,capaciteitstarief_elektriciteit_25A,heffingskorting)
                         jaar=[]
                         jaarkosten_gas=[]
                         jaarkosten_el=[]
@@ -41,7 +42,7 @@ def bereken(request):
                         plt.ylabel('Euro')
                         plt.xlabel('Jaren')
 
-                        lgd = plt.legend(loc='upper center', bbox_to_anchor=(0.5,-1))
+                        lgd = plt.legend(loc='upper center', bbox_to_anchor=(0.5,-0.1))
                         plt.title('Energie kosten')
 
                         buf = BytesIO()
